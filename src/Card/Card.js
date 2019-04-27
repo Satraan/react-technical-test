@@ -1,13 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import ExpandedView from '../ExpandedView/ExpandedView';
 
-
-const Card = ({user, className}) => {
+const CardImage = ({img, className}) => {
   return (
     <div className={className}>
-      <h1>{user.name}</h1><br/>
+      <img src={img}/>
+    </div>
+  )
+};
+
+const StyledCardImage = styled(CardImage)`
+  text-align:center;
+`;
+
+
+const Card = ({openModal, user, className}) => {
+  return (
+    <div className={className}>
+      <StyledCardImage img="https://via.placeholder.com/250"/>
+      <h2>{user.name}</h2>
       {user.address.city}
       <hr/>
+      <button onClick={openModal}>CLICK</button>
     </div>
   )
 };
@@ -17,7 +32,11 @@ const StyledCard = styled(Card)`
   padding:1em;
   display: inline-block;
   background-color: papayawhip;
-  max-width: 375px;
+  width: 275px;
+  min-height:370px;
+  > h2 {
+    text-align:center;
+  }
 `;
 
 
