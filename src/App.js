@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Card from './Card/Card';
 import ExpandedView from './ExpandedView/ExpandedView';
 import Modal from 'react-modal';
-
+import userData from './userData.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      users: [],
+      users: userData,
       modalIsOpen: false
     };
 
@@ -38,10 +37,6 @@ class App extends Component {
 
   componentDidMount() {
     Modal.setAppElement('body');
-
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(data => this.setState({ users:data }));
   }
 
   render() {

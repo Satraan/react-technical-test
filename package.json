@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "chokidar": "^2.1.5",
-    "fsevents": "^2.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
