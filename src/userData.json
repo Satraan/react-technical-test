@@ -22,7 +22,8 @@
       "bs": "harness real-time e-markets"
     },
     "rating": 5,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=9"
   },
   {
     "id": 2,
@@ -47,7 +48,8 @@
       "bs": "synergize scalable supply-chains"
     },
     "rating": 4,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=68"
   },
   {
     "id": 3,
@@ -72,7 +74,8 @@
       "bs": "e-enable strategic applications"
     },
     "rating": 2,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=7"
   },
   {
     "id": 4,
@@ -97,7 +100,8 @@
       "bs": "transition cutting-edge web services"
     },
     "rating": 4,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=31"
   },
   {
     "id": 5,
@@ -122,7 +126,8 @@
       "bs": "revolutionize end-to-end systems"
     },
     "rating": 1,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=23"
   },
   {
     "id": 6,
@@ -147,7 +152,8 @@
       "bs": "e-enable innovative applications"
     },
     "rating": 5,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=39"
   },
   {
     "id": 7,
@@ -172,7 +178,8 @@
       "bs": "generate enterprise e-tailers"
     },
     "rating": 2,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=53"
   },
   {
     "id": 8,
@@ -197,7 +204,8 @@
       "bs": "e-enable extensible e-tailers"
     },
     "rating": 3,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=11"
   },
   {
     "id": 9,
@@ -222,7 +230,8 @@
       "bs": "aggregate real-time technologies"
     },
     "rating": 3,
-    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?"
+    "bio": "I also have a cool fictional biography in two or fewer lines! Maybe there should be more lines though?",
+    "avatar": "http://i.pravatar.cc/250?img=27"
   },
   {
     "id": 10,
@@ -247,6 +256,7 @@
       "bs": "target end-to-end models"
     },
     "rating": 4,
-    "bio": "I have a cool fictional biography in two or fewer lines!"
+    "bio": "I have a cool fictional biography in two or fewer lines!",
+    "avatar": "http://i.pravatar.cc/250?img=1"
   }
 ]

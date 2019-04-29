@@ -4,15 +4,23 @@ import styled from 'styled-components';
 const ExpandedView = ({user, className}) => {
   return (
     <div className={className}>
-      HI
+      <h3>{user.name}</h3>
+      <hr/>
+      <p>
+        {user.address.street}
+        <br/> {user.address.suite}
+        <br/> {user.address.city}
+        <br/> {user.address.zipcode}
+      </p>
+
+      
     </div>
   )
 };
 
 const StyledExpandedView = styled(ExpandedView)`
-  width:100%;
-  height:100%;
-  background-color: red;
+  > h3 {
+  }
 `;
 
 export default StyledExpandedView;

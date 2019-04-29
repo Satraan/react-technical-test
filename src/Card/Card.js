@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ExpandedView from '../ExpandedView/ExpandedView';
+import { FaHome, FaStar, FaChevronRight } from 'react-icons/fa';
 
 const CardImage = ({img, className}) => {
   return (
@@ -10,18 +11,18 @@ const CardImage = ({img, className}) => {
   )
 };
 
-
-
 const StyledCardImage = styled(CardImage)`
   text-align:center;
+  > img {
+    border: black solid 2px;
+  }
 `;
 
 const Rating = ({rating, className}) => {
-
       let stars = []
       for (let i = 0; i < rating; i++) {
         stars.push(
-          <span>* </span>
+          <FaStar />
         )
       }
 
@@ -36,15 +37,20 @@ const StyledRating = styled(Rating)`
   text-align:center;
 `;
 
-const Card = ({openModal, user, className}) => {
+const StyledButton = styled.button`
+
+`;
+
+const Card = ({expandProfile, user, className}) => {
   return (
     <div className={className}>
-      <StyledCardImage img="https://via.placeholder.com/250"/>
+      <StyledCardImage img={user.avatar}/>
       <h3>{user.name}</h3>
-      {user.address.city}
+      <FaHome /> {user.address.city}
       <hr/>
       <StyledRating rating={user.rating}/>
-      <button onClick={openModal}>CLICK</button>
+
+      <button onClick={expandProfile} data-userkey={user.id}> See More <FaChevronRight/> </button>
     </div>
   )
 };
@@ -53,7 +59,10 @@ const StyledCard = styled(Card)`
   margin:1em;
   padding:1em;
   display: inline-block;
-  background-color: papayawhip;
+  background-color: #59a0ee9c;
+  -webkit-box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
+  -moz-box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
+  box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
   width: 275px;
   min-height:370px;
   > h3 {
