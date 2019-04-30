@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ExpandedView from '../ExpandedView/ExpandedView';
-import { FaHome, FaStar, FaChevronRight } from 'react-icons/fa';
+import { FaHome, FaStar, FaChevronCircleRight } from 'react-icons/fa';
 
 const CardImage = ({img, className}) => {
   return (
@@ -35,22 +35,51 @@ const Rating = ({rating, className}) => {
 
 const StyledRating = styled(Rating)`
   text-align:center;
+  margin-bottom: 0.5em;
 `;
 
 const StyledButton = styled.button`
-
+  background:transparent;
+  border-radius:5px;
+  border:none;
+  float:right;
+  font-size:1.5em;
+  line-height:1em;
+  padding:0.25em;
+  &:focus{
+    outline:0;
+  }
+  &:hover{
+    opacity:0.5;
+  }
+  > svg {
+    vertical-align:middle;
+  }
 `;
+
+const StyledCity = styled.div`
+  float:left;
+  bottom:0;
+  font-size:1.5em;
+  > svg, span {
+    vertical-align:middle;
+  }
+  > span {
+    font-size:0.85em;
+  }
+`;
+
+
 
 const Card = ({expandProfile, user, className}) => {
   return (
     <div className={className}>
       <StyledCardImage img={user.avatar}/>
       <h3>{user.name}</h3>
-      <FaHome /> {user.address.city}
       <hr/>
       <StyledRating rating={user.rating}/>
-
-      <button onClick={expandProfile} data-userkey={user.id}> See More <FaChevronRight/> </button>
+      <StyledCity>  <FaHome /> <span>{user.address.city}</span></StyledCity>
+      <StyledButton onClick={() => expandProfile(user.id)}> <FaChevronCircleRight /> </StyledButton>
     </div>
   )
 };
@@ -68,6 +97,7 @@ const StyledCard = styled(Card)`
   > h3 {
     text-align:center;
   }
+  >
 `;
 
 

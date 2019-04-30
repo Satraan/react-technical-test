@@ -56,9 +56,7 @@ class App extends Component {
       activeuser: this.state.users[0]
     });
   }
-  expandProfile = (event) => {
-    let key = event.target.dataset.userkey;
-
+  expandProfile = (key) => {
     let user = this.state.users[key-1];
     this.setState({
       modalIsOpen: true,
