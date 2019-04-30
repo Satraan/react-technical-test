@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaPhone, FaHome } from 'react-icons/fa';
+import { FaPhone, FaHome, FaChevronRight} from 'react-icons/fa';
 
 const StyledText = styled.div`
   display:inline-block;
@@ -11,7 +11,6 @@ const StyledText = styled.div`
     width:65%;
   }
 `;
-
 const StyledList = styled.ul`
   text-align:center;
   padding-left:0;
@@ -27,13 +26,26 @@ const StyledList = styled.ul`
     margin-right:0.25em;
   }
 `;
-
-
-
-const ExpandedView = ({user, className}) => {
+const StyledButton = styled.button`
+  background:transparent;
+  border-radius:5px;
+  border:none;
+  float:right;
+  padding-top:1em;
+  &:focus{
+    outline:0;
+  }
+  &:hover{
+    opacity:0.5;
+  }
+`;
+const ExpandedView = ({user, className, nextProfile, previousProfile}) => {
   return (
     <div className={className}>
-      <h2>{user.name}</h2>
+      <h2>
+        {user.name}
+        <StyledButton onClick={() => nextProfile(user.id)}> <FaChevronRight /> </StyledButton>
+      </h2>
       <hr/>
       <StyledText>
         <b>More about me</b><br/>
@@ -47,21 +59,18 @@ const ExpandedView = ({user, className}) => {
         <li>{user.address.city}</li>
         <li>{user.address.zipcode}</li>
       </StyledList>
-
       <StyledText>
         <br/>
         <b>Who I work for</b> <br/>
         {user.company.name}
         <br/> {user.company.catchPhrase}
       </StyledText>
-
       <StyledList>
         <br/>
         <li> <FaPhone/> <b>Contact info</b></li>
         <li>{user.phone}</li>
         <li>{user.website}</li>
       </StyledList>
-
     </div>
   )
 };

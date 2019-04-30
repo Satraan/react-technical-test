@@ -6,7 +6,6 @@ import ExpandedView from './ExpandedView/ExpandedView';
 import Modal from 'react-modal';
 import userData from './userData.json';
 
-
 const modalStyles = {
   content : {
     top                   : '50%',
@@ -20,7 +19,6 @@ const modalStyles = {
 
   }
 };
-
 
 
 class App extends Component {
@@ -41,24 +39,17 @@ class App extends Component {
   openModal() {
       this.setState({modalIsOpen: true});
     }
-
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
+    //Required to bind react-modal
   }
-
   closeModal() {
     this.setState({modalIsOpen: false});
   }
-
   handleClick () {
     this.openModal()
   }
-
   componentDidMount() {
     Modal.setAppElement('body');
-    this.setState({
-      activeuser: this.state.users[0]
-    });
   }
   expandProfile = (key) => {
     let user = this.state.users[key-1];
@@ -66,10 +57,18 @@ class App extends Component {
       modalIsOpen: true,
       activeuser: user
     });
-
-    console.log(this.state.activeuser);
-
-
+  }
+  nextProfile = (key) => {
+    var user;
+    if (key!==9) {
+       user = this.state.users[key];
+    }
+    else {
+       user = this.state.users[0];
+    }
+    this.setState({
+      activeuser: user
+    });
   }
 
   render() {
@@ -77,7 +76,6 @@ class App extends Component {
     const StyledMain = styled.div`
       text-align:center;
     `;
-
     return (
       <StyledMain>
           <Modal
@@ -86,17 +84,14 @@ class App extends Component {
             onRequestClose={this.closeModal}
             style={modalStyles}
             contentLabel="Example Modal">
-              <ExpandedView user={this.state.activeuser}/>
+              <ExpandedView user={this.state.activeuser} nextProfile={this.nextProfile}/>
             </Modal>
-
           <ul>
             {users.map(user =>
                 <Card key={user.id}  user={user} expandProfile={this.expandProfile}/>
             )}
           </ul>
       </StyledMain>
-
-
     );
   }
 }

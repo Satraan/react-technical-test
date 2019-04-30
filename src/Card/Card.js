@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import ExpandedView from '../ExpandedView/ExpandedView';
 import { FaHome, FaStar, FaChevronCircleRight } from 'react-icons/fa';
+
 
 const CardImage = ({img, className}) => {
   return (
     <div className={className}>
-      <img src={img}/>
+      <img src={img} alt="avatar"/>
     </div>
   )
 };
-
 const StyledCardImage = styled(CardImage)`
   text-align:center;
   > img {
@@ -22,17 +21,15 @@ const Rating = ({rating, className}) => {
       let stars = []
       for (let i = 0; i < rating; i++) {
         stars.push(
-          <FaStar />
+          <FaStar key={i}/>
         )
       }
-
   return (
     <div className={className}>
       {stars}
     </div>
   )
 };
-
 const StyledRating = styled(Rating)`
   text-align:center;
   margin-bottom: 0.5em;
@@ -69,8 +66,6 @@ const StyledCity = styled.div`
   }
 `;
 
-
-
 const Card = ({expandProfile, user, className}) => {
   return (
     <div className={className}>
@@ -83,7 +78,6 @@ const Card = ({expandProfile, user, className}) => {
     </div>
   )
 };
-
 const StyledCard = styled(Card)`
   margin:1em;
   padding:1em;
@@ -101,6 +95,5 @@ const StyledCard = styled(Card)`
     border-color:#00000091;
   }
 `;
-
 
 export default StyledCard;
