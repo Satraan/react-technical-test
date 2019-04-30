@@ -88,7 +88,7 @@ const StyledCard = styled(Card)`
   margin:1em;
   padding:1em;
   display: inline-block;
-  background-color: #59a0ee9c;
+  background-color: #aad2fd;
   -webkit-box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
   -moz-box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
   box-shadow: 6px 4px 5px 0px rgba(125,124,125,0.64);
@@ -97,7 +97,9 @@ const StyledCard = styled(Card)`
   > h3 {
     text-align:center;
   }
-  >
+  > hr {
+    border-color:#00000091;
+  }
 `;
 
 

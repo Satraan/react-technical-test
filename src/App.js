@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import Card from './Card/Card';
 import ExpandedView from './ExpandedView/ExpandedView';
@@ -14,10 +15,13 @@ const modalStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    backgroundColor      : 'papayawhip'
+    backgroundColor       : '#aad2fd',
+    boxShadow             : '6px 4px 5px 0px rgba(125,124,125,0.64)'
 
   }
 };
+
+
 
 class App extends Component {
   constructor(props) {
@@ -70,24 +74,28 @@ class App extends Component {
 
   render() {
     const { users } = this.state;
+    const StyledMain = styled.div`
+      text-align:center;
+    `;
 
     return (
-      <div id="app">
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={modalStyles}
-          contentLabel="Example Modal">
-            <ExpandedView user={this.state.activeuser}/>
-          </Modal>
+      <StyledMain>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            style={modalStyles}
+            contentLabel="Example Modal">
+              <ExpandedView user={this.state.activeuser}/>
+            </Modal>
 
-        <ul>
-          {users.map(user =>
-              <Card key={user.id}  user={user} expandProfile={this.expandProfile}/>
-          )}
-        </ul>
-      </div>
+          <ul>
+            {users.map(user =>
+                <Card key={user.id}  user={user} expandProfile={this.expandProfile}/>
+            )}
+          </ul>
+      </StyledMain>
+
 
     );
   }
